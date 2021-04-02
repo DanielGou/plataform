@@ -1,0 +1,50 @@
+.nav-bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.144);
+    position: fixed; 
+    top: 0;
+}
+
+.right{
+    display: flex;
+}
+
+a{
+    padding: 0px 15px;
+
+}
+
+.card-conteiner{
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(0, 0, 0, 0.14);
+    box-shadow: 4px 4px 2px rgba(77, 77, 77, 0.098);
+    margin: 20px;
+    margin: 30px;
+    
+}
+
+#img-card{
+    height: 65%;
+    background-color: rgb(230, 230, 230);
+}
+
+.publi-conteiner{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 100px;
+}
+
+.text-card{
+    padding: 20px;
+    width: 100%;
+}
+
+#title-card{
+    font-size: 25px;
+}

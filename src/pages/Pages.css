@@ -1,0 +1,46 @@
+.home-content{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 40vh;
+}
+
+.home-logo{
+    margin-bottom: 100px;
+}
+
+.conteiner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+    align-self: center;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 30vh;
+    width: 350px;
+    height: 250px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.105);
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.256);
+}
+
+.input{
+    padding: 5px;
+}
+
+#title{
+    font-size: 35px;
+    
+}
+
+.btn-entry{
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    color: white;
+    background-color: rgb(62, 62, 255);
+    border-radius: 5px;
+    border: none;
+}
