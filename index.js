@@ -31,9 +31,10 @@ app.use(function (req, res, next) {
 
 app.post('/api/login', async (req,res)=>{
 
-    const { username, password } = req.body
+    const { email, password } = req.body
+    console.log( email, password )
 
-    const user = await User.findOne({username}).lean()
+    const user = await User.findOne({email}).lean()
 
     if(!user){
         return res.json({ status: 'error', error: 'Usuario ou senha invalidas' })
