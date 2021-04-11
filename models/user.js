@@ -4,7 +4,10 @@ const UserSchema= new mongoose.Schema({
     name: {type: String, require: true},
     email: {type: String, require, unique: true},
     username: {type: String, require: true, unique: true},
-    password: {type: String, require: true}
+    password: {type: String, require: true},
+    checkedEmail: { type: Boolean, default: false },
+    posts: {type: String},
+    createdAt:{ type:Date, default: Date.now }
 }, {collection: 'users'})
 
 const model = mongoose.model('UserSchema', UserSchema)
