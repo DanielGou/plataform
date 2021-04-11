@@ -7,9 +7,23 @@ function Sigup(){
     const [ username, setUsername ] = useState('')
     const [ email, setEmail ] = useState('')
     const [ password, setPassword ] = useState('')
+    const [ error, setError ] = useState('')
 
     
     function  createUser(){
+
+        if(name < 3){
+            setError('Nome muito curto. Mínimo 3 caracteres.')
+        }
+
+        if(username < 4){
+            setError('Nome de usuário muito curto. Mínimo 4 caracteres.')
+        }
+
+        if(password < 6){
+            setError('Senha muito curta. Mínimo 6 caracteres.')
+        }
+
         const requestOptions = {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
@@ -23,8 +37,13 @@ function Sigup(){
         
             fetch('http://localhost:9000/api/register', requestOptions)
                 .then(res=>{
-                    res.json()
-                    console.log(res)
+                    return res.json()
+                }).then (data=>{
+                    if(data.status === 'error'){
+                        setError(data.error)
+                    }else{
+                        window.location = '/checkedEmail'
+                    }
                 })
     }
 
@@ -38,6 +57,7 @@ function Sigup(){
             <div className='input'>Email: <input onChange={e=> setEmail(e.target.value)}/></div>
             <div className='input'>Senha: <input type='password' onChange={e=> setPassword(e.target.value)}/></div>
             <button onClick={createUser} className='btn-entry'>Entrar</button>
+            <div className='msg-error'>{ error }</div>
         </div>
     )
 }

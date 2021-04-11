@@ -19,18 +19,22 @@
     margin: auto;
     margin-top: 30vh;
     width: 350px;
-    height: 250px;
+    height: 300px;
     border-radius: 10px;
     background-color: rgba(0, 0, 0, 0.105);
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.256);
+    text-align: center;
+    padding: 10px;
 }
 
 .input{
-    padding: 5px;
+    margin-top: 10px;
+    display: flex;
 }
 
 #title{
     font-size: 35px;
+    margin: 5px;
     
 }
 
@@ -43,4 +47,32 @@
     background-color: rgb(62, 62, 255);
     border-radius: 5px;
     border: none;
+}
+
+.msg-error{
+    color: red;
+    text-align: center;
+}
+
+.create-page{
+    margin-top: 120px;
+}
+
+input{
+    width: 99%;
+    margin-left: 5px;
+}
+
+textarea{
+    width: 100% !important;
+}
+
+.create-area{
+    width: 70%;
+    margin: auto;
+    text-align: center;
+}
+
+#editor{
+    margin-top: 20px;
 }

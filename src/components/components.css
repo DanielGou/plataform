@@ -11,26 +11,25 @@
 
 .right{
     display: flex;
+    margin-right: 20px;
 }
+
 
 a{
     padding: 0px 15px;
-
+    color: black;
+    text-decoration: none;
 }
 
 .card-conteiner{
-    width: 350px;
-    height: 350px;
+    width: 250px;
+    height: 100px;
     border: 1px solid rgba(0, 0, 0, 0.14);
     box-shadow: 4px 4px 2px rgba(77, 77, 77, 0.098);
     margin: 20px;
     margin: 30px;
+    padding: 20px;
     
-}
-
-#img-card{
-    height: 65%;
-    background-color: rgb(230, 230, 230);
 }
 
 .publi-conteiner{
@@ -40,11 +39,11 @@ a{
     margin-top: 100px;
 }
 
-.text-card{
-    padding: 20px;
-    width: 100%;
-}
-
 #title-card{
     font-size: 25px;
+}
+
+#author-card{
+    margin-top: 70px;
+    font-size: 10px;
 }
