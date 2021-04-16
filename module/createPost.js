@@ -20,10 +20,17 @@ function createPost(name, title, post){
           content="Web site created using create-react-app"
         />
         <style>
-        #root{
-          width: 60%;
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+
+        #bodyPost{
+          width: 70%;
           margin: auto;
           text-align: center;
+          margin-top: 130px;
+          font-family: 'Open Sans Condensed', sans-serif;
+        }
+        h1{
+          word-break: break-all;
         }
       </style>
 
@@ -31,7 +38,7 @@ function createPost(name, title, post){
       </head>
       <body>
         
-        <div id="root">
+        <div id="bodyPost">
         
 
         <h1>
