@@ -1,14 +1,18 @@
 import './Pages.css'
 import Header from '../components/Header'
 import Publications from '../components/Publications'
+import { FaBookOpen } from 'react-icons/fa';
 
 function Home(){
     return(
         <div>
             <Header/>
             <div className='home-content'>
-                <div className='home-logo'>
-                    <a href>Logo</a>
+                <div>
+                    <div className='home-logo'>
+                        <FaBookOpen/>
+                        <div>Læse</div>
+                    </div>
                     <div>
                         Uma plataforma para publicar seus artigos, tutoriais, conteudos e ainda monetizar.
                     </div>

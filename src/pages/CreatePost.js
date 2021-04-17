@@ -17,11 +17,11 @@ function CreatePost(){
     function submitServer(){
 
         if(title === ''){
-            setError('O post precisa de um título.')
+            return setError('O post precisa de um título.')
         }
 
         if(text === ''){
-            setError('O post precisa de um texto')
+            return setError('O post precisa de um texto')
         }
 
         const token = localStorage.getItem('token')
@@ -36,10 +36,19 @@ function CreatePost(){
             })
         }
 
-        fetch('http://localhost:9000/api/create', requestOptions)
+        fetch('http://10.0.0.9:9000/api/create', requestOptions)
             .then(res=>res.json())
             .then(data=>{
                 console.log(data)
+                if(data.status === 'ok'){
+                    window.location = '/'
+                }else{
+                    if(data.error === 'invalid token'){
+                        window.location = '/login'
+                    }else{
+                        setError(data.error)
+                    }
+                }
             })
     }
 

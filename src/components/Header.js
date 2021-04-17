@@ -1,4 +1,5 @@
 import './components.css'
+import { FaBookOpen } from 'react-icons/fa';
 import { Link } from 'react-router-dom'
 
 function Header(){
@@ -10,10 +11,13 @@ function Header(){
         return(
             <div className='header-conteiner'>
                 <div className="nav-bar">
-                    <a href>Logo</a>
-                    <div className='right'>
+                    <div className='logo'>
+                        <Link to='/'>AtViden </Link>
+                        <FaBookOpen/>
+                    </div>
+                    <div className='right'> 
                         <Link to='/create'>Criar</Link>
-                        <div>{username}</div>
+                        <Link>{username}</Link>
                     </div>
                 </div>
             </div>
@@ -24,9 +28,11 @@ function Header(){
         return(
             <div className='header-conteiner'>
                 <div className="nav-bar">
-                    <a href>Logo</a>
+                    <div className='logo'>
+                        <Link to='/'>Læse </Link>
+                        <FaBookOpen/>
+                    </div>
                     <div className='right'>
-                        <Link to='/create'>Criar</Link>
                         <Link to='/login'>Entrar</Link>
                         <Link to='/sigup'>Cadastrar-se</Link>
                     </div>

@@ -1,12 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gudea&display=swap');
+
 .home-content{
     display: flex;
     justify-content: center;
     text-align: center;
     margin-top: 40vh;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    margin-bottom: 100px;
 }
 
 .home-logo{
-    margin-bottom: 100px;
+    font-size: 40px;
+    font-family: 'Gudea', sans-serif;
+
 }
 
 .conteiner{
@@ -75,4 +83,8 @@ textarea{
 
 #editor{
     margin-top: 20px;
+}
+
+.render-post{
+    font-size: 25px;
 }

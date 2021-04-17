@@ -30,7 +30,13 @@ function VerifyEmail(){
             .then(res=>{
                 res.json()
             }).then(data=> {
-                console.log(data)
+                if(data.status === 'error'){
+                    if(data.error === 'invalid token'){
+                        window.location = '/login'
+                    }else{
+                        setError(data.error)
+                    }
+                }
             })
     }, [])
     
@@ -42,10 +48,16 @@ function VerifyEmail(){
 
             console.log('ok' + input + code)
 
-            fetch('http://localhost:9000/api/checkUserEmail', requestOptions)
+            fetch('http://10.0.0.9:9000/api/checkUserEmail', requestOptions)
                 .then(res=> res.json())
                 .then(data=>{
-                    if(data.status==='ok'){
+                    if(data.status === 'error'){
+                        if(data.error === 'invalid token'){
+                            window.location = '/login'
+                        }else{
+                            setError(data.error)
+                        }
+                    }else{
                         window.location = '/'
                     }
                 })

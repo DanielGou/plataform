@@ -35,7 +35,7 @@ function Sigup(){
              })
         }
         
-            fetch('http://localhost:9000/api/register', requestOptions)
+            fetch('http://10.0.0.9:9000/api/register', requestOptions)
                 .then(res=>{
                     return res.json()
                 }).then (data=>{

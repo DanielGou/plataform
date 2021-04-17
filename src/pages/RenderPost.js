@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 function RenderPages({match}){
 
     const [ post, setPost ] = useState()
+    const [ error, setError ] = useState('')
 
     const idPost = match.params.id
 
@@ -18,11 +19,16 @@ function RenderPages({match}){
     
     useEffect(()=>{
         
-        fetch('http://localhost:9000/api/getPost', requestOptions)
+        fetch('http://10.0.0.9:9000/api/getPost', requestOptions)
             .then(res=>res.json())
             .then(data=>{
-                setPost(data.file)
+                if(data.status === 'error'){
+                    setError(data.error)
+                }else{
+                    setPost(data.file)
+                }
             })
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[])
 
     
@@ -30,7 +36,8 @@ function RenderPages({match}){
     return(
         <div>
             <Header/>
-            { post }
+            <div className='render-post' dangerouslySetInnerHTML={{__html: post}} />;
+            <div className='msg-error'>{error}</div>
         </div>
     )
 }
