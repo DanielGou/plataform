@@ -9,11 +9,10 @@ const mail = nodemailer.createTransport({
     }
 })
 
-function send(mailOptions){
+function send(mailOptions, cb){
 
-    mail.sendMail(mailOptions, (error, info)=>{
-        console.log(error)
-        console.log(info)
+    mail.sendMail(mailOptions,(error, info)=>{
+        return cb(error, info)
     })
 
 }
