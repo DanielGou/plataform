@@ -90,7 +90,7 @@ app.post('/api/sendEmailVerify',async (req,res)=>{
     try{
         var verifyToken = jwt.verify(token, process.env.JWT_TOKEN)        
     }catch(err){
-        return res.json({status: 'error', error: 'invalid token'})
+        return res.json({status: 'error', error: 'Token Inválido'})
     }
 
     let _id = verifyToken._id
@@ -106,9 +106,16 @@ app.post('/api/sendEmailVerify',async (req,res)=>{
         text: `Codigo: ${code}`
     }
 
-    sendEmail(mailOptions)
+    sendEmail(mailOptions, cb)
 
-    res.json({status:'ok'})
+    function cb(error, info){
+        if(error){
+            return res.json({status: 'error', error: 'Email Inválido'})
+        }else{
+            res.json({status:'ok'})
+        }
+    }
+
 })
 
 app.post('/api/checkUserEmail', async(req,res)=>{
@@ -118,7 +125,7 @@ app.post('/api/checkUserEmail', async(req,res)=>{
     try{
         var verifyToken = jwt.verify(token, process.env.JWT_TOKEN)
     }catch(err){
-        return res.json({status: 'error', error: 'invalid token'})
+        return res.json({status: 'error', error: 'Token Inválido'})
     }
 
     const _id = verifyToken._id
@@ -126,7 +133,7 @@ app.post('/api/checkUserEmail', async(req,res)=>{
     try{
         const user = await User.findOneAndUpdate({_id}, {checkedEmail: true}).lean()
     }catch(err){
-        return res.json({status: 'error', error: 'Usuario não encontrador'})
+        return res.json({status: 'error', error: 'Usuario não encontrado'})
     }
 
     res.json({ status: 'ok' })
@@ -139,7 +146,7 @@ app.post('/api/create', async(req,res)=>{
     try{
         var verifyToken = jwt.verify(token, process.env.JWT_TOKEN)
     }catch(err){
-        return res.json({status: 'error', error: 'invalid token'})
+        return res.json({status: 'error', error: 'Token Inválido'})
     }
 
     const _id = verifyToken._id
@@ -147,7 +154,7 @@ app.post('/api/create', async(req,res)=>{
     try{
         var user = await User.findOne({_id})
     }catch(err){
-        return res.json({status: 'error', error: 'Usuario não encontrado'})
+        return res.json({status: 'error', error: 'Usuário não encontrado'})
     }
 
     let post = createPost(name=_id, title, text)
@@ -162,6 +169,13 @@ app.post('/api/create', async(req,res)=>{
     }catch(err){
         console.log(err)
     }
+
+    try{
+       await User.findOneAndUpdate({_id}, { $push:{posts: data._id} }).lean()
+    }catch(err){
+        console.log(err)
+    }
+
     
     res.json({ status: 'ok' })
 })
