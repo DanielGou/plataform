@@ -29,7 +29,6 @@ function Login(){
                     localStorage.setItem('token', data.token)
                     localStorage.setItem('username', data.username)
 
-                    console.log(data)
                     window.location = '/'
                 }
             })

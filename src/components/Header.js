@@ -12,7 +12,7 @@ function Header(){
             <div className='header-conteiner'>
                 <div className="nav-bar">
                     <div className='logo'>
-                        <Link to='/'>AtViden </Link>
+                        <Link to='/'>Læse</Link>
                         <FaBookOpen/>
                     </div>
                     <div className='right'> 
@@ -29,7 +29,7 @@ function Header(){
             <div className='header-conteiner'>
                 <div className="nav-bar">
                     <div className='logo'>
-                        <Link to='/'>Læse </Link>
+                        <Link to='/'>Læse</Link>
                         <FaBookOpen/>
                     </div>
                     <div className='right'>

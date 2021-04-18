@@ -27,15 +27,14 @@ function VerifyEmail(){
 
     useEffect(()=>{       
         fetch('http://localhost:9000/api/sendEmailVerify', requestOptions)
-            .then(res=>{
-                res.json()
-            }).then(data=> {
+            .then(res=>res.json())
+            .then(data=> {
                 if(data.status === 'error'){
-                    if(data.error === 'invalid token'){
-                        window.location = '/login'
-                    }else{
-                        setError(data.error)
-                    }
+                     if(data.error === 'invalid token'){
+                         window.location = '/login'
+                     }else{
+                         setError(data.error)
+                     }
                 }
             })
     }, [])

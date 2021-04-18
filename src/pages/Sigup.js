@@ -42,7 +42,9 @@ function Sigup(){
                     if(data.status === 'error'){
                         setError(data.error)
                     }else{
-                        window.location = '/checkedEmail'
+                        localStorage.setItem('token', data.token)
+                        localStorage.setItem('username', data.username)
+                        window.location = '/chekedEmail'
                     }
                 })
     }

@@ -14,7 +14,7 @@ function Home(){
                         <div>Læse</div>
                     </div>
                     <div>
-                        Uma plataforma para publicar seus artigos, tutoriais, conteudos e ainda monetizar.
+                        Uma plataforma para publicar seus artigos, tutoriais, conteúdos e ainda monetizar.
                     </div>
                 </div>
             </div>
