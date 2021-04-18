@@ -13,7 +13,7 @@ const createPost = require('./module/createPost')
 const app = express()
 app.use(cors())
 
-mongoose.connect(process.env.LINK_DB, {useUnifiedTopology: true, useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true } )
+mongoose.connect(process.env.LINK_DB, {useUnifiedTopology: true, useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false } )
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
@@ -43,8 +43,6 @@ app.post('/api/register', async(req,res)=>{
 
     const { name, email, username, password: plainTextPassword } = req.body
 
-    console.log(req.body)
-
     if(typeof name !== 'string'){
         return res.json({ status: 'error', error: 'Nome inválido' })
     }
@@ -65,7 +63,7 @@ app.post('/api/register', async(req,res)=>{
     const password = await bcrypt.hash(plainTextPassword, 10)
     
     try{
-        const response = await User.create({
+        var data = await User.create({
             name,
             email,
             username,
@@ -80,9 +78,9 @@ app.post('/api/register', async(req,res)=>{
         throw err
     }
 
-    const token = jwt.sign({ _id: user._id }, process.env.JWT_TOKEN)
+    const token = jwt.sign({ _id: data._id }, process.env.JWT_TOKEN, {expiresIn: '24h'})
     
-    res.json({ status: 'ok', token: token })
+    res.json({ status: 'ok', token: token, username: data.username})
 })
 
 

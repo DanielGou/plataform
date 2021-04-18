@@ -12,6 +12,7 @@ const mail = nodemailer.createTransport({
 function send(mailOptions){
 
     mail.sendMail(mailOptions, (error, info)=>{
+        console.log(error)
         console.log(info)
     })
 
