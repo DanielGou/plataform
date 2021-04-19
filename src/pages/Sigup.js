@@ -35,7 +35,7 @@ function Sigup(){
              })
         }
         
-            fetch('http://10.0.0.9:9000/api/register', requestOptions)
+            fetch('http://laese-api-com.umbler.net/api/register', requestOptions)
                 .then(res=>{
                     return res.json()
                 }).then (data=>{
