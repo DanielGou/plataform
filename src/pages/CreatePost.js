@@ -44,7 +44,7 @@ function CreatePost(){
                     window.location = '/'
                 }else{
                     if(data.error === 'invalid token'){
-                        window.location = '/login'
+                        window.location = 'plataform/#/login'
                     }else{
                         setError(data.error)
                     }
