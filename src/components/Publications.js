@@ -8,7 +8,7 @@
         const [ error, setError ] = useState('')
 
         useEffect(()=>{
-            fetch('http://laese-api-com.umbler.net/api/listAllPosts', {method: 'GET'})
+            fetch('https://laese-api-com.umbler.net/api/listAllPosts', {method: 'GET'})
             .then(data=>data.json())
             .then(data=>{
                 if(data.status === 'error'){

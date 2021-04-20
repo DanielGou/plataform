@@ -36,7 +36,7 @@ function CreatePost(){
             })
         }
 
-        fetch('http://laese-api-com.umbler.net/api/create', requestOptions)
+        fetch('https://laese-api-com.umbler.net/api/create', requestOptions)
             .then(res=>res.json())
             .then(data=>{
                 console.log(data)

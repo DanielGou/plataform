@@ -26,7 +26,7 @@ function VerifyEmail(){
 
 
     useEffect(()=>{       
-        fetch('http://laese-api-com.umbler.net/api/sendEmailVerify', requestOptions)
+        fetch('https://laese-api-com.umbler.net/api/sendEmailVerify', requestOptions)
             .then(res=>res.json())
             .then(data=> {
                 if(data.status === 'error'){
@@ -47,7 +47,7 @@ function VerifyEmail(){
 
             console.log('ok' + input + code)
 
-            fetch('http://laese-api-com.umbler.net/api/checkUserEmail', requestOptions)
+            fetch('https://laese-api-com.umbler.net/api/checkUserEmail', requestOptions)
                 .then(res=> res.json())
                 .then(data=>{
                     if(data.status === 'error'){

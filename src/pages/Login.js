@@ -18,7 +18,7 @@ function Login(){
             })
         }
 
-        fetch('http://laese-api-com.umbler.net/api/login', requestOptions)
+        fetch('https://laese-api-com.umbler.net/api/login', requestOptions)
             .then(res=>{
                 return res.json()
             }).then(data =>{

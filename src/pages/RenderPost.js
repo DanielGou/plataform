@@ -19,7 +19,7 @@ function RenderPages({match}){
     
     useEffect(()=>{
         
-        fetch('http://laese-api-com.umbler.net/api/getPost', requestOptions)
+        fetch('https://laese-api-com.umbler.net/api/getPost', requestOptions)
             .then(res=>res.json())
             .then(data=>{
                 if(data.status === 'error'){
