@@ -31,7 +31,7 @@ function VerifyEmail(){
             .then(data=> {
                 if(data.status === 'error'){
                      if(data.error === 'invalid token'){
-                         window.location = '/plataform/#/login'
+                         window.location = '/#/login'
                      }else{
                          setError(data.error)
                      }
@@ -52,12 +52,12 @@ function VerifyEmail(){
                 .then(data=>{
                     if(data.status === 'error'){
                         if(data.error === 'invalid token'){
-                            window.location = '/plataform/#/login'
+                            window.location = '/#/login'
                         }else{
                             setError(data.error)
                         }
                     }else{
-                        window.location = '/plataform/#/'
+                        window.location = '/'
                     }
                 })
 

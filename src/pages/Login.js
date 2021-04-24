@@ -29,7 +29,7 @@ function Login(){
                     localStorage.setItem('token', data.token)
                     localStorage.setItem('username', data.username)
 
-                    window.location = '/plataform/'
+                    window.location = '/'
                 }
             })
 
