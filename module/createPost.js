@@ -19,6 +19,7 @@ function createPost(name, title, post){
           name="description"
           content="Web site created using create-react-app"
         />
+        <script data-ad-client="ca-pub-8195627923230046" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap');
 
