@@ -43,7 +43,7 @@ function CreatePost(){
                 if(data.status === 'ok'){
                     window.location = '/'
                 }else{
-                    if(data.error === 'invalid token'){
+                    if(data.error === 'Token Inválido'){
                         window.location = '/#/login'
                     }else{
                         setError(data.error)

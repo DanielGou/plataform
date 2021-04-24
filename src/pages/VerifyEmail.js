@@ -30,7 +30,7 @@ function VerifyEmail(){
             .then(res=>res.json())
             .then(data=> {
                 if(data.status === 'error'){
-                     if(data.error === 'invalid token'){
+                     if(data.error === 'Token Inválido'){
                          window.location = '/#/login'
                      }else{
                          setError(data.error)
@@ -51,7 +51,7 @@ function VerifyEmail(){
                 .then(res=> res.json())
                 .then(data=>{
                     if(data.status === 'error'){
-                        if(data.error === 'invalid token'){
+                        if(data.error === 'Token Inválido'){
                             window.location = '/#/login'
                         }else{
                             setError(data.error)
